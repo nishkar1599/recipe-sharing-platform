@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #60382E;
+			margin: 0;
+			padding: 0;
+		}
+
+		.container {
+			max-width: 800px;
+			margin: 50px auto;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 8px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		h1 {
+			text-align: center;
+			color: #FCFAE6;
+		}
+
+		.form-container {
+			background-color: #FCFAE6;
+			padding: 20px;
+			border-radius: 8px;
+			margin-bottom: 20px;
+		}
+
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+
+		input[type="text"],
+		textarea {
+			width: calc(100% - 20px);
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+		}
+
+		button {
+			padding: 10px 20px;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #0056b3;
+		}
+
+		.recipes-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 20px;
+		}		
+
+		.recipe {
+			background-color: #f9f9f9;
+			padding: 20px;
+			border-radius: 8px;
+			transition: transform 0.3s;
+		}
+
+		.recipe:hover {
+			transform: scale(1.05);
+		}
+
+		.recipe h2 {
+			margin-top: 0;
+			color: #333;
+		}
+
+		.recipe p {
+			margin: 10px 0;
+			color: #666;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+        <div class="form-container">
+            <h2>Add Recipe</h2>
+            <form action="insert.php" method="post">
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="ingredients">Ingredients:</label>
+                    <textarea id="ingredients" name="ingredients" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="instructions">Instructions:</label>
+                    <textarea id="instructions" name="instructions" required></textarea>
+                </div>
+                <button type="submit">Add Recipe</button>
+            </form>
+        </div>
+        <div id="recipesContainer" class="recipes-container"></div>
+    </div>
+</body>
+</html>
